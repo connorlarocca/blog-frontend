@@ -1,7 +1,7 @@
 export function About() {
   return (
-    <div>
-      <h1>About</h1>
+    <div className="text-center">
+      <h1 className="text-center">About</h1>
     </div>
   );
 }

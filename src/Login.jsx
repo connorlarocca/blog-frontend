@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { LogoutLink } from "./LogoutLink";
 
 const jwt = localStorage.getItem("jwt");
 if (jwt) {
@@ -30,8 +31,8 @@ export function Login() {
   };
 
   return (
-    <div id="login">
-      <h1>Login</h1>
+    <div id="login" className="text-center">
+      <h1 className="text-center">Login</h1>
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>

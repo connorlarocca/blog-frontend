@@ -1,19 +1,24 @@
-// import axios from "axios";
+import axios from "axios";
 // import { useState } from "react";
 
-export function PostsNew(props) {
+export function PostsNew() {
+  const handleCreatePost = (params) => {
+    axios.post("http://localhost:3000/posts.json", params).then((response) => {
+      window.location.href = "/";
+    });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const params = new FormData(event.target);
-    console.log("handleSubmit", params);
-    props.onPostCreate(params);
+    console.log("handleSubmit");
+    handleCreatePost(params);
     event.target.reset();
   };
 
   return (
-    <div id="posts-new">
-      <h1>New Post</h1>
+    <div id="posts-new" className="text-center">
+      <h1 className="text-center">New Post</h1>
       <form onSubmit={handleSubmit}>
         <div class="form-group">
           <label for="formGroupExampleInput">Title</label>

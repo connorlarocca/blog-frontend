@@ -13,7 +13,6 @@ export function LogoutLink() {
       <a href="#" onClick={handleClick}>
         Logout
       </a>
-      <a href="#"> Return To Top</a>
     </>
   );
 }
